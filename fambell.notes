@@ -1,0 +1,15 @@
+-= LOGIN REGISTER SCREEN =-
+
+Download images/icons, place in assets folder.
+root > Create app folder > Move assets folder into app > Create screens folder > Create LoginForm.js and LoginScreen.js.
+LoginScreen.js
+
+expo install @react-native-community/picker
+
+== Documentation ==
+
+TextInput
+    https://reactnative.dev/docs/textinput
+        onSubmitEditing
+            Callback that is called when the text input's submit button is pressed with the argument {nativeEvent: {text, eventCount, target}}.
+            Note that on iOS this method isn't called when using keyboardType="phone-pad".
