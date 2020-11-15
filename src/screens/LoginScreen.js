@@ -1,24 +1,12 @@
 import React from "react";
-import {
-  Image,
-  ImageBackground,
-  KeyboardAvoidingView,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 
 import colors from "../config/colors";
 import LoginForm from "../components/LoginForm";
 
 const LoginScreen = (props) => {
   return (
-    <ImageBackground
-      style={styles.background}
-      imageStyle={{ opacity: 0.4 }}
-      source={require("../assets/dinner-table.jpg")}
-    >
+    <View style={styles.container}>
       <View style={styles.logoContainer}>
         <Image
           style={styles.logo}
@@ -29,12 +17,12 @@ const LoginScreen = (props) => {
       <View style={styles.formContainer}>
         <LoginForm />
       </View>
-    </ImageBackground>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  background: {
+  container: {
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
