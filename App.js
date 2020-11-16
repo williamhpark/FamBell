@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Alert, ImageBackground, StyleSheet, Text, View } from "react-native";
+import { Alert, ImageBackground } from "react-native";
 
 import LoginScreen from "./src/screens/LoginScreen";
 import GroupSelect from "./src/screens/GroupSelect";

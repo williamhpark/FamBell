@@ -1,6 +1,11 @@
 export default {
+  login: {
+    btn: "#AFDAC1",
+    btnText: "black",
+    inputBackground: "rgba(255, 255, 255, 0.8)",
+    logoText: "black",
+  },
   groups: {
-    primary: "#FC5C65",
     defaultText: "rgba(0, 0, 0, 0.6)",
     backgroundColor: "rgba(255, 255, 255, 0.8)",
   },

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ImageBackground, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Picker } from "@react-native-community/picker";
 
 import colors from "../config/colors";

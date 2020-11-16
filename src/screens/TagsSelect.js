@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageBackground, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import AddTag from "../components/AddTag";
 import Tag from "../components/Tag";

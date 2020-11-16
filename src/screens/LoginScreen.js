@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 
 import colors from "../config/colors";
 import LoginForm from "../components/LoginForm";
@@ -25,11 +25,6 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "stretch",
   },
-  loginButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: colors.primary,
-  },
   logo: {
     position: "absolute",
     top: 80,
@@ -41,13 +36,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   logoText: {
-    color: "black",
+    color: colors.login.logoText,
     fontSize: 70,
-  },
-  registerButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: colors.primary,
   },
 });
 

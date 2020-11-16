@@ -7,6 +7,8 @@ import {
   View,
 } from "react-native";
 
+import colors from "../config/colors";
+
 const LoginForm = (props) => {
   return (
     <View style={styles.container}>
@@ -26,21 +28,21 @@ const LoginForm = (props) => {
         returnKeyType="go"
         ref={(input) => (passwordInput = input)}
       />
-      <TouchableOpacity style={styles.buttonContainer}>
-        <Text style={styles.buttonText}>LOGIN</Text>
+      <TouchableOpacity style={styles.btnContainer}>
+        <Text style={styles.btnText}>LOGIN</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    backgroundColor: "#afdac1",
+  btnContainer: {
+    backgroundColor: colors.login.btn,
     paddingVertical: 15,
   },
-  buttonText: {
+  btnText: {
     textAlign: "center",
-    color: "black",
+    color: colors.login.btnText,
     fontWeight: "700",
   },
   container: {
@@ -48,9 +50,8 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    backgroundColor: "rgba(255, 255, 255, 0.8)",
+    backgroundColor: colors.login.inputBackground,
     marginBottom: 20,
-    color: "black",
     paddingHorizontal: 10,
   },
 });
