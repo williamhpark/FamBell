@@ -1,19 +1,25 @@
-import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useState } from "react";
+import { ImageBackground, StyleSheet, View } from "react-native";
 import { Picker } from "@react-native-community/picker";
 
-const GroupSelect = () => {
+import colors from "../config/colors";
+
+const GroupSelect = (props) => {
+  const [selectedValue, setSelectedValue] = useState("Select Group");
+
   return (
-    <View style={styles.dropdownContainer}>
+    <View style={styles.container}>
       <Picker
         style={styles.dropdown}
-        selectedValue={props.selected}
-        onValueChange={(itemValue, itemIndex) =>
-          this.setState({ selected: itemValue })
-        }
+        selectedValue={selectedValue}
+        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
       >
-        <Picker.Item label="Select Group" value="" color="rgba(0, 0, 0, 0.6)" />
-        {this.state.groups.map((group, index) => (
+        <Picker.Item
+          label="Select Group"
+          value=""
+          color={colors.groups.defaultText}
+        />
+        {props.groups.map((group) => (
           <Picker.Item
             key={group.value}
             label={group.label}
@@ -26,15 +32,14 @@ const GroupSelect = () => {
 };
 
 const styles = StyleSheet.create({
-  dropdownContainer: {
+  container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
   dropdown: {
     width: "75%",
-    backgroundColor: "rgba(255, 255, 255, 0.8)",
-    textAlign: "center",
+    backgroundColor: colors.groups.backgroundColor,
   },
 });
 

@@ -8,6 +8,8 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
+import colors from "../config/colors";
+
 const AddItem = (props) => {
   const [text, setText] = useState("");
 
@@ -19,7 +21,7 @@ const AddItem = (props) => {
         <TextInput
           style={styles.input}
           placeholder="Add Tag..."
-          placeholderTextColor="black"
+          placeholderTextColor={colors.addTag.placeholder}
           value={text}
           onChangeText={onChange}
         ></TextInput>
@@ -40,7 +42,7 @@ const AddItem = (props) => {
 
 const styles = StyleSheet.create({
   btn: {
-    backgroundColor: "#c2bad8",
+    backgroundColor: colors.addTag.btnBackground,
     padding: 9,
     margin: 5,
     alignItems: "center",
@@ -48,13 +50,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   btnText: {
-    color: "darkslateblue",
+    color: colors.addTag.btnText,
     fontSize: 20,
     textAlign: "center",
     marginLeft: 5,
   },
   container: {
-    width: "100%",
     marginBottom: 5,
   },
   input: {
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   inputContainer: {
-    backgroundColor: "rgba(255, 255, 255, 0.4)",
+    backgroundColor: colors.addTag.inputContainer,
   },
 });
 

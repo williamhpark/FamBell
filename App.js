@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Alert, ImageBackground, StyleSheet, Text, View } from "react-native";
 
-import AddTag from "./src/components/AddTag";
 import LoginScreen from "./src/screens/LoginScreen";
 import GroupSelect from "./src/screens/GroupSelect";
-import TagsList from "./src/components/TagsList";
+import TagsSelect from "./src/screens/TagsSelect";
 
 const App = () => {
   console.log("Starting app");
@@ -30,18 +29,6 @@ const App = () => {
     { id: getRandomId(), title: "Dinner", isSelected: false },
   ]);
 
-  const toggleTag = (id) => {
-    console.log(id);
-    setTags(
-      tags.map((tag) => {
-        if (tag.id === id) {
-          return { ...tag, isSelected: !tag.isSelected };
-        }
-      })
-    );
-    console.log(tags);
-  };
-
   const addTag = (text) => {
     if (!text) {
       Alert.alert(
@@ -60,24 +47,27 @@ const App = () => {
     }
   };
 
+  const toggleTag = (id) => {
+    let tagsArr = [...tags];
+    tags.map((tag, i) => {
+      if (tag.id == id) {
+        tagsArr[i] = { id, title: tag.title, isSelected: !tag.isSelected };
+      }
+    });
+    setTags(tagsArr);
+  };
+
   return (
     <ImageBackground
-      style={styles.background}
+      style={{ width: "100%", height: "100%" }}
       imageStyle={{ opacity: 0.4 }}
       source={require("./src/assets/dinner-table.jpg")}
     >
-      <AddTag addTag={addTag} />
-      <TagsList tags={tags} toggleTag={toggleTag} />
+      {/* <LoginScreen /> */}
+      {/* <GroupSelect groups={groups} /> */}
+      {/* <TagsSelect tags={tags} toggleTag={toggleTag} addTag={addTag} /> */}
     </ImageBackground>
   );
 };
-
-const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 export default App;
