@@ -11,6 +11,8 @@ import { Ionicons } from "@expo/vector-icons";
 import colors from "../config/colors";
 
 const AddItem = (props) => {
+  const { addTag } = props;
+
   const [text, setText] = useState("");
 
   const onChange = (textValue) => setText(textValue);
@@ -29,7 +31,7 @@ const AddItem = (props) => {
       <TouchableOpacity
         style={styles.btn}
         onPress={() => {
-          props.addTag(text);
+          addTag(text);
           setText("");
         }}
       >

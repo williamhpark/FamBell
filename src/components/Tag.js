@@ -5,8 +5,10 @@ import { Ionicons } from "@expo/vector-icons";
 import colors from "../config/colors";
 
 const Tag = (props) => {
+  const { tag, toggleTag } = props;
+
   const makeStyles = () => {
-    if (props.tag.isSelected) {
+    if (tag.isSelected) {
       return {
         borderRadius: 23,
         borderColor: colors.tag.border,
@@ -38,24 +40,24 @@ const Tag = (props) => {
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => props.toggleTag(props.tag.id)}
+      onPress={() => toggleTag(tag.id)}
     >
       <View style={makeStyles()}>
-        {!props.tag.isSelected && (
+        {!tag.isSelected && (
           <Ionicons
             style={{ color: colors.tag.iconText, marginRight: 3 }}
             name="md-add"
             size={20}
           />
         )}
-        {props.tag.isSelected && (
+        {tag.isSelected && (
           <Ionicons
             style={{ color: colors.tag.iconText, marginRight: 3 }}
             name="md-remove"
             size={20}
           />
         )}
-        <Text style={styles.text}>{props.tag.title}</Text>
+        <Text style={styles.text}>{tag.title}</Text>
       </View>
     </TouchableOpacity>
   );

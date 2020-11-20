@@ -1,12 +1,18 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 
-import colors from "../config/colors";
 import LoginForm from "../components/LoginForm";
+import colors from "../config/colors";
 
 const LoginScreen = (props) => {
+  const { navigation } = props;
+
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      style={styles.background}
+      imageStyle={{ opacity: 0.4 }}
+      source={require("../assets/dinner-table.jpg")}
+    >
       <View style={styles.logo}>
         <Image
           style={styles.logoImg}
@@ -14,13 +20,13 @@ const LoginScreen = (props) => {
         />
         <Text style={styles.logoText}>FamBell</Text>
       </View>
-      <LoginForm />
-    </View>
+      <LoginForm navigation={navigation} />
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "stretch",

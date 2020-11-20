@@ -1,6 +1,7 @@
 export default {
+  primary: "#AFDAC1",
+  nextBtnText: "black",
   login: {
-    btn: "#AFDAC1",
     btnText: "black",
     inputBackground: "rgba(255, 255, 255, 0.8)",
     logoText: "black",

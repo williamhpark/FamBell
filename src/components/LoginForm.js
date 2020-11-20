@@ -10,6 +10,8 @@ import {
 import colors from "../config/colors";
 
 const LoginForm = (props) => {
+  const { navigation } = props;
+
   return (
     <View style={styles.container}>
       <TextInput
@@ -28,7 +30,10 @@ const LoginForm = (props) => {
         returnKeyType="go"
         ref={(input) => (passwordInput = input)}
       />
-      <TouchableOpacity style={styles.btnContainer}>
+      <TouchableOpacity
+        style={styles.btnContainer}
+        onPress={() => navigation.navigate("Groups")}
+      >
         <Text style={styles.btnText}>LOGIN</Text>
       </TouchableOpacity>
     </View>
@@ -37,7 +42,7 @@ const LoginForm = (props) => {
 
 const styles = StyleSheet.create({
   btnContainer: {
-    backgroundColor: colors.login.btn,
+    backgroundColor: colors.primary,
     paddingVertical: 15,
   },
   btnText: {
